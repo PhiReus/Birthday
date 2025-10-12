@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+
 import { motion } from "framer-motion"
 import { Volume2, VolumeX, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,15 +10,31 @@ const loveMessage = `Em yêu của anh,
 
 Có những điều anh muốn nói với em, nhưng đôi khi lời nói không đủ để diễn tả hết tình cảm của anh.
 
+Dù anh có thể không hoàn hảo, nhưng tình yêu anh dành cho em là chân thành và vô điều kiện.
+
+Từ lần đầu gặp gỡ anh chưa từng nghĩ sẽ có ngày mình bên nhau như bây giờ, anh vẫn không thể diển ta được cảm xúc đó.
+
 Từ ngày gặp em, cuộc sống của anh đã thay đổi hoàn toàn. Em là ánh sáng soi đường cho anh, là nguồn động lực để anh cố gắng mỗi ngày, là lý do khiến anh tin vào tình yêu đích thực.
 
 Anh yêu nụ cười của em, yêu cách em quan tâm đến anh, yêu tất cả những gì làm nên con người em. Mỗi khoảnh khắc bên em đều là món quà quý giá mà anh trân trọng.
 
+Anh biết đôi lúc anh vô tâm, làm em buồn , làm em phiền lòng không phải vì anh bớt yêu em, chỉ là cách anh thể hiện tình yêu có thể đôi khi làm em khó chịu, không vì vậy mà anh bớt yêu em đâu.
+
+Nhiều lần em khóc vì anh, thấy em tủi thân anh thương lắm nên anh luôn lấy đó để làm động lực, để cố gắng sau này có thể chăm lo cho em.
+
+Đừng bao giờ có suy nghĩ là anh sẽ bớt yêu em, hay là hết yêu em nhé vì cuộc sống này chúng ta đề bận rộn mà. Mổi ngày yêu thêm một chút để dành dành tỉnh cảm đong đầy không cần vội vã chúng mình cứ từ từ yêu và sẽ yêu mãi như vậy em nhé.
+
+Anh hứa sẽ luôn lắng nghe, thấu hiểu và chia sẻ cùng em mọi niềm vui, nỗi buồn trong cuộc sống.
+
 Anh hứa sẽ luôn ở bên em, yêu thương em, và làm mọi thứ để em luôn hạnh phúc. Vì em xứng đáng có được tất cả những điều tốt đẹp nhất trên đời.
 
-Yêu em nhiều lắm!
+Hôm nay là ngày đặc biệt mà, ngày mà thế giới của anh được sinh ra đời, chúc cho em luôn cười tươi, luôn hạnh phúc (tất nhiên người làm em cười tươi và hạnh phúc nhất chính là anh rồi đúng không nào hehe).
 
-- Anh của em ❤️`
+Chúc cho tình yêu của chúng mình sẽ mãi bền lâu, vượt qua mọi thử thách và khó khăn trong cuộc sống.
+
+Anh yêu em rất nhiều, hơn cả những gì anh có thể diễn tả bằng lời.
+
+- Yêu Em ❤️`
 
 export default function MessagePage() {
   const [displayedText, setDisplayedText] = useState("")
@@ -129,7 +146,7 @@ export default function MessagePage() {
           className="mt-8 flex justify-center"
         >
           <Button onClick={toggleMusic} size="lg" variant="secondary" className="rounded-full shadow-lg gap-2">
-            {isPlaying ? (
+           {isPlaying ? (
               <>
                 <Volume2 className="w-5 h-5" />
                 <span>Tắt nhạc</span>
@@ -145,9 +162,9 @@ export default function MessagePage() {
 
         {/* Audio element - using a placeholder URL */}
         <audio
-          ref={audioRef}
-          loop
-          src="/placeholder-audio.mp3"
+         ref={audioRef}
+          loop 
+          src="/happy-birthday.mp3"
           onError={() => console.log("[v0] Audio file not found - add your own music file")}
         />
       </div>

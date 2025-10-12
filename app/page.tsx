@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
+
 import dynamic from "next/dynamic"
 import Navigation from "@/components/navigation"
 import HomePage from "@/components/home-page"
@@ -12,6 +13,7 @@ const FloatingHearts = dynamic(() => import("@/components/floating-hearts"), { s
 
 export default function Page() {
   const [currentPage, setCurrentPage] = useState<"home" | "memories" | "message">("home")
+
 
   return (
     <main className="min-h-screen relative overflow-hidden">
@@ -37,6 +39,7 @@ export default function Page() {
           Made with <span className="text-primary animate-pulse">❤️</span> by <span className="font-semibold">Anh</span>{" "}
           dành tặng <span className="font-semibold">Em</span>
         </p>
+
       </footer>
     </main>
   )

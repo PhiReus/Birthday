@@ -11,7 +11,7 @@ interface NavigationProps {
 export default function Navigation({ currentPage, onPageChange }: NavigationProps) {
   const navItems = [
     { id: "home" as const, label: "Trang chủ", icon: Heart },
-    { id: "memories" as const, label: "Kỷ niệm", icon: ImageIcon },
+    { id: "memories" as const, label: "Sinh nhật", icon: ImageIcon },
     { id: "message" as const, label: "Lời nhắn", icon: MessageCircle },
   ]
 

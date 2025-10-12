@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import { Volume2, VolumeX } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -8,30 +9,64 @@ import { Button } from "@/components/ui/button"
 const memories = [
   {
     id: 1,
-    caption: "Lần đầu tiên chúng mình gặp nhau",
-    description: "Ngày đó em cười thật tươi, và anh đã biết em là người đặc biệt",
+    caption: "Ánh mắt đầu tiên",
+    description: "Anh vẫn còn nhớ rỏ cảm xúc lần đầu gặp em, anh không dám nói là yêu từ cái nhìn đầu tiên nhưng chắc chắn là ánh mắt đó đã khắc sâu và tâm trí anh",
   },
   {
     id: 2,
-    caption: "Chuyến đi đầu tiên của chúng mình",
-    description: "Biển xanh, cát trắng, và em bên cạnh anh - hoàn hảo!",
+    caption: "Nụ cười tỏa nắng",
+    description: "Mỗi khi em cười, cả thế giới bừng sáng. Nụ cười ấy là nguồn năng lượng vô tận, giúp anh vượt qua mọi khó khăn.",
   },
   {
     id: 3,
-    caption: "Sinh nhật em năm ngoái",
-    description: "Anh sẽ không bao giờ quên nụ cười hạnh phúc của em",
+    caption: "Bàn tay dịu dàng",
+    description: "Bàn tay em luôn ở đó, luôn nắm chặt tay anh qua mọi khó khăn. Từ khi có em bên cạnh, anh thấy cuộc sống anh tốt lên rất nhiều",
   },
   {
     id: 4,
-    caption: "Những buổi tối bên nhau",
-    description: "Dù chỉ là những điều giản đơn, nhưng với anh đó là tất cả",
+    caption: "Cẳm ơn mẹ em",
+    description: "Mẹ anh sinh anh ra để ngắm nhìn thế giới, còn mẹ em lại mang cả thế giới đến bên anh.",
   },
   {
     id: 5,
-    caption: "Kỷ niệm ngọt ngào",
-    description: "Mỗi khoảnh khắc bên em đều đáng trân trọng",
+    caption: "Tiểu thư nè",
+    description: "Mỗi khoảnh khắc bên em anh đều rất trân trọng, và anh sẽ cố gắng để tạo ra thật nhiều kỷ niệm đẹp bên em, để em luôn cười tươi mổi ngày.",
+  },
+  {
+    id: 6,
+    caption: "13/10/2025",
+    description: "Chúc mừng sinh nhật Embe của anh, chúc cho em tuổi mới luôn vui tươi như 'Tớ không biết buồn', chúc cho đôi ta ngày càng yêu hơn, và chúc cho tình yêu của chúng mình sẽ mãi bền lâu. Anh yêu Embe nhiều ❤️",
+  },
+  {
+    id: 7,
+    caption: "2/9",
+    description: "Vi vu quốc khánh nè",
+  },
+  {
+    id: 8,
+    caption: "🤔",
+    description: "đang làm gì vậy ?",
+  },
+  {
+    id: 9,
+    caption: "Cua chống",
+    description: "Dưỡng thê",
+  },
+  {
+    id: 10,
+    caption: "Ngoan xink iu",
+    description: "Metro",
+  },
+  {
+    id: 11,
+    caption: "Chill Girl",
+    description: "Coffe bệt",
   },
 ]
+/*
+ { emoji: "✨", text: "Mãi bên nhau nhé" },
+          ].map((item, index) => (
+*/
 
 export default function MemoriesPage() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -53,7 +88,7 @@ export default function MemoriesPage() {
           className="text-3xl md:text-5xl font-serif text-primary text-center mb-12"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          Những kỷ niệm của chúng mình
+          Cảm ơn em vì đã đến bên anh <span>❤️</span>
         </motion.h2>
 
         <div className="relative">
@@ -68,13 +103,12 @@ export default function MemoriesPage() {
             >
               {/* Image placeholder */}
               <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 via-accent/20 to-secondary flex items-center justify-center">
-                <img
-                  src={`/romantic-couple-memory-.jpg?height=600&width=800&query=romantic couple memory ${memories[currentIndex].caption}`}
-                  alt={memories[currentIndex].caption}
-                  className="w-full h-full object-cover"
+               <img
+                 src={`/em${currentIndex + 1}.jpg`}
+                 alt={memories[currentIndex].caption}
+                 className="w-full h-full object-cover"
                 />
               </div>
-
               {/* Caption */}
               <div className="p-8 md:p-12">
                 <h3 className="text-2xl md:text-3xl font-serif text-primary mb-4 text-balance">
@@ -122,5 +156,6 @@ export default function MemoriesPage() {
         </div>
       </div>
     </div>
+
   )
 }

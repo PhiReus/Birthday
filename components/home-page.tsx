@@ -32,7 +32,7 @@ export default function HomePage() {
           className="text-4xl md:text-6xl lg:text-7xl font-serif text-primary mb-6 text-balance"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          Dành tặng em yêu của anh
+          Chúc mừng sinh nhật Embe của anh <span className="text-rose-500">❤️</span> 
         </motion.h1>
 
         <motion.div
@@ -42,8 +42,9 @@ export default function HomePage() {
           className="space-y-4"
         >
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed max-w-2xl mx-auto text-pretty">
-            Mỗi khoảnh khắc bên em đều là một kỷ niệm đẹp đẽ mà anh muốn lưu giữ mãi mãi. Trang web này là món quà nhỏ
-            anh dành tặng em, người đã làm cuộc sống của anh thêm ý nghĩa và hạnh phúc.
+           “Hôm nay là một ngày thật đặc biệt — ngày mà thế giới đón chào em.
+            Mỗi khoảnh khắc bên em đều là một món quà, và trang web này là món quà nhỏ anh dành tặng em — người khiến cuộc sống của anh trở nên ấm áp và rực rỡ hơn bao giờ hết.
+            Chúc em sinh nhật thật vui vẻ, luôn cười thật tươi và hạnh phúc, vì em xứng đáng với tất cả điều đẹp nhất.”
           </p>
 
           <motion.div
@@ -78,6 +79,7 @@ export default function HomePage() {
             </motion.div>
           ))}
         </motion.div>
+       
       </div>
     </div>
   )
