@@ -1,11 +1,14 @@
 "use client"
 
 import { useState } from "react"
+import dynamic from "next/dynamic"
 import Navigation from "@/components/navigation"
 import HomePage from "@/components/home-page"
 import MemoriesPage from "@/components/memories-page"
 import MessagePage from "@/components/message-page"
-import FloatingHearts from "@/components/floating-hearts"
+
+// Load FloatingHearts only on the client to avoid server-side "window" usage
+const FloatingHearts = dynamic(() => import("@/components/floating-hearts"), { ssr: false })
 
 export default function Page() {
   const [currentPage, setCurrentPage] = useState<"home" | "memories" | "message">("home")
